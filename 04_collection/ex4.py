@@ -76,8 +76,8 @@ print()
 # 두 점의 x, y, z축 좌표값끼리 더한 튜플을 만들기
 p1 = (1, 2, 3)
 p2 = (10, 20, 30)
-
-
+result = tuple((a + b for a, b in zip(p1, p2)))
+print(result)
 
 # =========================================================
 #  🔥 실습 문제
@@ -88,22 +88,22 @@ days = ("일","월","화","수","목","금","토")
 hours = (2, 3, 1, 4, 5, 2, 6)
 
 # 1️⃣ 월 ~ 금까지 총 학습시간 출력하기
-                                                    # ✅ 15시간
+print(sum(hours[1:6]))                                                    # ✅ 15시간
 
 
 # 2️⃣ 가장 많이 공부한 시간 출력하기
-                                                    # ✅ 6시간
+print(max(hours[1:6]))                                                    # ✅ 6시간
 
 
 # 3️⃣ 가장 많이 공부한 요일 출력하기
-                                                    # ✅ 토요일
+print(days[x] for x in range(len(hours)) if hours[x] == max(hours))                                                    # ✅ 토요일
 
 
 # 4️⃣ 가장 높은 점수와 가장 낮은 점수 출력하기
 scores = (90, 85, 78, 92, 88, 76)
 
 
-                                                    # ✅ max 점수: 92점, min 점수: 76점
+print(f"max 점수: {max(scores)}점, min 점수: {min(scores)}점")                                                    # ✅ max 점수: 92점, min 점수: 76점
 
 
 # 5️⃣ 과일가게 총 재고 금액 구하기
@@ -112,7 +112,7 @@ stocks = (
     ("바나나", 2000, 3),
     ("체리", 5000, 2),
 )
-
+result = sum(stocks[x][1] * stocks[x][2] for x in range(0, len(stocks)) )
 # 총 재고 금액 출력
 
-                                                    # ✅ 총액: 21,000원
+print(result)                                                    # ✅ 총액: 21,000원
